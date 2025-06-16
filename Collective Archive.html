@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Collection</title>
+    <link rel="stylesheet" href="Collective.css">
+
+ <!-- Google Fonts preconnect and font import -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="header">
+        <h1>Collective Heritage</h1>
+        <p class="header-explanation">
+          Welcome to the Collective Heritage Archive!<br>Explore the interactive map to understand different types of heritage,<br>then share your own story however you choose.<br>You control what and how you share - your contribution helps build a more inclusive understanding of our shared heritage.</p>
+        <a href="Map.html" class="back-button">Back to Map</a>
+    </div>
+    
+
+      <main class="main-content">
+        <section class="qr-section">
+          <div class="qr-container" onclick="window.open('https://happy-airplane-30e.notion.site/1eb56a5333998016a63addd2285ebe71', '_blank')">
+            <div class="qr-icon-wrapper">
+              <img src="Images/Collective Heritage/frame_BLUE.png" alt="QR Code to contribute" class="qr-code" />
+              <div class="qr-overlay">
+                <span class="plus-icon">+</span>
+              </div>
+            </div>
+            <p>Click or scan to add your heritage</p>
+          </div>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-bar">
+              <button data-filter="All">All</button>
+              <button data-filter="Tangible">Tangible</button>
+              <button data-filter="Intangible">Intangible</button>
+              <button data-filter="Mental">Mental</button>        
+            </div>
+            <div id="tagExplanation" class="tag-explanation">Showing all heritage items.</div>
+          </section>
+      
+      
+    
+    <div class="heritage-grid" id="heritageGrid">
+        <!-- Image Card (Tangible) -->
+        <div class="heritage-card" data-tag="Tangible">
+            <div class="card-image">
+                <img src="Collective Images/istockphoto-117632410-612x612.jpg" alt="Vintage family photo">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Family Reunion 1935</div>
+                <div class="card-description">Annual family gathering at grandfather's house in the countryside.</div>
+                <div class="card-meta">Added: June 12, 2023</div>
+            </div>
+        </div>
+        
+        <!-- Text Card (Intangible) -->
+        <div class="heritage-card" data-tag="Intangible">
+            <div class="card-text">
+                "When I was a child, we didn't have television. Our entertainment was listening to grandmother's stories."
+            </div>
+            <div class="card-content">
+                <div class="card-title">Grandmother's Stories</div>
+                <div class="card-description">Memories shared by Uncle John about his childhood in the 1940s</div>
+                <div class="card-meta">Added: May 5, 2023</div>
+            </div>
+        </div>
+        
+        <!-- Audio Card (Intangible) -->
+        <div class="heritage-card" data-tag="Intangible">
+            <div class="card-audio">
+                <div class="card-title">Traditional Lullaby</div>
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support audio element.
+                </audio>
+            </div>
+            <div class="card-content">
+                <div class="card-description">This lullaby was sung to children in our family for at least four generations.</div>
+                <div class="card-meta">Added: April 22, 2023</div>
+            </div>
+        </div>
+        
+        <!-- Image Card (Tangible) -->
+        <div class="heritage-card" data-tag="Tangible">
+            <div class="card-image">
+                <img src="Collective Images/opinion-on-grandmothers-wedding-set-v0-umxh13mdinza1.webp" alt="Family heirloom">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Grandmother's Wedding Ring</div>
+                <div class="card-description">This ring has been passed down since 1892.</div>
+                <div class="card-meta">Added: March 15, 2023</div>
+            </div>
+        </div>
+        
+        <!-- Text Card (Intangible) -->
+        <div class="heritage-card" data-tag="Intangible">
+            <div class="card-text">
+                Recipe for Great-Grandma's Apple Pie:
+
+                Ingredients:
+                - 6 cups apples
+                - 3/4 cup sugar
+                - 2 tbsp flour
+                - 3/4 tsp cinnamon
+                - 1/4 tsp nutmeg
+                - 1 tbsp lemon juice
+                - 2 tbsp butter
+
+                Instructions:
+                1. Mix ingredients
+                2. Pour into crust
+                3. Dot with butter
+                4. Add top crust
+                5. Bake 425°F for 40–45 min
+            </div>
+            <div class="card-content">
+                <div class="card-title">Family Recipe</div>
+                <div class="card-description">Written in 1952, but passed down since the 1920s.</div>
+                <div class="card-meta">Added: February 28, 2023</div>
+            </div>
+        </div>
+        
+        <!-- Image Card (Mental) -->
+        <div class="heritage-card" data-tag="Mental">
+            <div class="card-image">
+                <img src="Collective Images/istockphoto-462320591-612x612.jpg" alt="Old letter">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Letter from 1943</div>
+                <div class="card-description">A letter sent home by my grandfather during WWII.</div>
+                <div class="card-meta">Added: January 10, 2023</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+          <span id="modalClose" class="modal-close">&times;</span>
+          <div id="modalBody"></div>
+        </div>
+      </div>
+      
+      <script src="Collective.js"></script>
+
+</body>
+</html>

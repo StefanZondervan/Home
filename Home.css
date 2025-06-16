@@ -1,0 +1,80 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body, html {
+  height: 100%;
+  font-family: 'Ancizar Serif', serif;
+  background-color: rgb(255, 245, 233);
+  color: #398273;
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  color: #398273;
+  line-height: 1.6;
+  font-style: italic;
+  user-select: text;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Main title */
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #398273;
+  letter-spacing: 1.2px;
+}
+
+/* Intro paragraph */
+.hero p.intro {
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  color: #398273;
+  line-height: 1.6;
+  font-style: italic;
+  user-select: text;
+}
+
+/* Call to action button */
+.cta-button {
+  background-color: #398273;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgba(99, 169, 160, 0.5);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.cta-button:hover {
+  background-color: #398273;
+  color: #e2eae8;
+}
