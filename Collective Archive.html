@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collective Heritage</title>
+    <link rel="stylesheet" href="Collective.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="header">
+        <h1>Collective Heritage</h1>
+        <p class="header-explanation">
+          Welcome to the Collective Heritage Archive!<br>Explore the interactive map to understand different types of heritage,<br>then share your own story however you choose.<br>You control what and how you share - your contribution helps build a more inclusive understanding of our shared heritage.</p>
+        <a href="index.html" class="back-button">Back to Map</a>
+    </div>
+
+    <main class="main-content">
+        <section class="qr-section">
+            <div class="qr-container">
+                <a href="https://happy-airplane-30e.notion.site/1eb56a5333998016a63addd2285ebe71" target="_blank" class="add-heritage-button">
+                    </a>
+            </div>
+            <p>Click to share your own story and contribute to the archive.</p>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-bar">
+                <button data-filter="All">All</button>
+                <button data-filter="Tangible">Tangible</button>
+                <button data-filter="Intangible">Intangible</button>
+                <button data-filter="Mental">Mental</button>
+            </div>
+            <div id="tagExplanation" class="tag-explanation">Showing all heritage items.</div>
+        </section>
+
+        <div class="heritage-grid" id="heritageGrid">
+
+            <div class="heritage-card" data-tag="Tangible">
+                <div class="card-image">
+                    <img src="Collective Heritage/All I have is an image of you and that's okay 21856a53339981b4a9a9e86f96169341/IMG_8690.jpeg" alt="Vintage family photo">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">All I have is an image of you and that's okay</div>
+                    <div class="card-description">I've never met my grandfather because he abandoned his family while my mom was still young. This is the first photo that I ever saw of him when I was 19, it's him and my grandma on the left. It was a really weird sensation because as soon as I saw the picture I realised I looked like him. I don't know that much about him apart from the fact that he was a con artist, a prick and that we share love for reading. I'm okay with looking like him on the outside, but I wouldn't want to be anything like him otherwise.</div>
+                    <div class="card-footer-info">
+                        <div class="card-name">Ally Ivanova</div>
+                        <div class="card-meta">June 21, 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heritage-card" data-tag="Tangible">
+                <div class="card-image">
+                    <img src="Collective Heritage/Gekregen van mijn vader 21856a53339981198ea0f3bfc059dad9/klok.jpg" alt="A clock">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Gekregen van mijn vader.</div>
+                    <div class="card-description">Een erfstuk wat steeds word overgedragen van vader op zoon.</div>
+                    <div class="card-footer-info">
+                        <div class="card-name">Wouter Zondervan</div>
+                        <div class="card-meta">June 19, 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heritage-card" data-tag="Tangible">
+                <div class="card-image">
+                    <img src="Collective Heritage/Grandmotheres neckless 21856a53339981d39074d6c4cb8ae284/IMG20250620131135.jpg" alt="Necklace">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Grandmother's necklace</div>
+                    <div class="card-description">Gekregen van mijn oma, zij droeg deze altijd met veel trots.</div>
+                    <div class="card-footer-info">
+                        <div class="card-name">Angelina Kuijpers</div>
+                        <div class="card-meta">June 19, 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heritage-card" data-tag="Tangible">
+                <div class="card-image">
+                    <img src="Collective Heritage/wedding gift 21556a53339981da885bdf8fdeacb204/WhatsApp_Image_2025-06-17_at_11.37.19_1f52d1b7.jpg" alt="Wedding rings">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Wedding gift</div>
+                    <div class="card-description">Wedding gift from grandpa and grandma from the family Zondervan</div>
+                    <div class="card-footer-info">
+                        <div class="card-name"></div> <div class="card-meta">June 17, 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heritage-card" data-tag="Intangible">
+                <div class="card-image">
+                    <img src="Collective Heritage/Ladin people do Rap music 20556a53339981168f9bffdd623c6378/IMG_1211.jpeg" alt="Ladin rap music">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Ladin people do Rap music</div>
+                    <div class="card-description">Far in the mountains people don't just use it's enviroment for own profit but there are people who write and create rap music with it's local language called Ladino, which is a minority and so it's important we all listen to ladin rap and make it become big.</div>
+                    <div class="card-footer-info">
+                        <div class="card-name"></div> <div class="card-meta">June 12, 2025</div>
+                    </div>
+                </div>
+            </div>
+
+        </div> </main> <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <span id="modalClose" class="modal-close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="Collective.js"></script>
+
+</body>
+</html>
