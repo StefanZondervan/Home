@@ -1,0 +1,903 @@
+/* Collective.css */
+
+/* Base body and font */
+body {
+  font-family: 'Ancizar Serif', serif;
+  background: rgb(255, 245, 233);
+  color: #398273;
+  margin: 0;
+  padding: 30px 20px;
+  line-height: 1.6;
+  overflow-x: hidden; /* Ensure no horizontal scroll on the body by default */
+}
+
+/* Header styling */
+.header {
+  max-width: 1400px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; /* Ensure padding is included in total width */
+}
+
+.header h1 {
+  flex-grow: 1;
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #398273;
+  word-wrap: break-word; /* Ensures long words break to prevent overflow */
+}
+
+.header-explanation {
+  flex-basis: 100%;
+  font-style: italic;
+  font-size: 1rem;
+  color: #398273;
+  margin: 0px 0 0 0;
+  line-height: 1.4;
+  user-select: none;
+  padding-bottom: 10px;
+  word-wrap: break-word; /* Ensures long words break to prevent overflow */
+}
+
+.back-button {
+  flex-shrink: 0;
+  font-family: 'Ancizar Serif', serif;
+  background-color: #dcdcdc;
+  color: #398273;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent button text from wrapping initially */
+}
+
+.back-button:hover {
+  background-color: #b4b4b4;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Main content container */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box; /* Ensure padding is included in total width */
+  width: 100%; /* Ensure it takes full available width */
+}
+
+/* QR Section - Adjusted for the new button */
+.qr-section {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.qr-container {
+  margin: 0 auto; /* Keep it centered */
+  width: fit-content; /* Allow container to shrink to button size */
+  max-width: 100%;
+}
+
+/* NEW "Add Your Heritage" Button Styling (Icon-only with CSS '+') */
+.add-heritage-button {
+  display: flex; /* Use flexbox to center the '+' */
+  justify-content: center;
+  align-items: center;
+  width: 70px; /* Fixed width for a square/circle button */
+  height: 70px; /* Fixed height for a square/circle button */
+  background-color: #398273; /* Your brand green */
+  border-radius: 50%; /* Make it perfectly circular */
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative; /* Needed for pseudo-element positioning */
+  overflow: hidden; /* Ensure anything overflowing is clipped */
+  font-size: 0; /* Hide any existing text within the <a> tag */
+}
+
+/* Create the '+' symbol using pseudo-elements */
+.add-heritage-button::before,
+.add-heritage-button::after {
+  content: '';
+  position: absolute;
+  background-color: #fff; /* White color for the '+' */
+}
+
+/* Vertical bar of the '+' */
+.add-heritage-button::before {
+  width: 4px;
+  height: 40px; /* Length of the vertical bar */
+  border-radius: 2px; /* Slightly rounded ends */
+}
+
+/* Horizontal bar of the '+' */
+.add-heritage-button::after {
+  width: 40px; /* Length of the horizontal bar */
+  height: 4px;
+  border-radius: 2px; /* Slightly rounded ends */
+}
+
+.add-heritage-button:hover {
+  background-color: #2e6b5f; /* Slightly darker green on hover */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2); /* More prominent shadow */
+}
+
+.qr-section p {
+  margin-top: 10px;
+  color: #398273;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+
+/* Filter Section */
+.filter-section {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Filter bar styling */
+.filter-bar {
+  display: inline-block;
+  width: auto;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-bar button {
+  font-family: 'Ancizar Serif', serif;
+  background-color: #e8e6e0;
+  color: #398273;
+  border: none;
+  padding: 12px 28px;
+  margin: 0 10px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+  white-space: nowrap; /* Prevent button text from wrapping */
+  flex-shrink: 0; /* Prevent buttons from shrinking too much in flex container */
+}
+
+.filter-bar button:hover {
+  background-color: #cfcac1;
+  transform: scale(1.05);
+}
+
+/* Active state for filter buttons */
+.filter-bar button.active {
+  background-color: #398273;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  transform: scale(1.02);
+}
+
+/* Tag explanation styling */
+.tag-explanation {
+  margin-top: 15px;
+  color: #398273;
+  font-style: italic;
+  font-size: 1rem;
+  word-wrap: break-word;
+}
+
+/* Heritage grid with consistent spacing and max width */
+.heritage-grid {
+  display: grid;
+  /* Default for wider screens, can be overridden by specific min-width media queries */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Card style with subtle shadow and smooth scale on hover */
+.heritage-card {
+  background-color: #fff;
+  border-radius: 18px; /* Default border-radius for all cards */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  overflow: hidden; /* Crucial for clipping content within border-radius */
+  opacity: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex; /* Make card a flex container */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.heritage-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* Card image container to keep aspect ratio */
+.card-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden; /* Important for clipping image to border radius */
+  border-bottom: 1px solid #398273;
+  box-sizing: border-box;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* Ensure no extra space below image */
+}
+
+/* Card content spacing and font styling */
+.card-content {
+  padding: 20px 25px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  display: flex; /* Make card-content a flex container */
+  flex-direction: column; /* Stack children vertically */
+  flex-grow: 1; /* Allow card-content to take up available space in heritage-card */
+  justify-content: space-between; /* Push bottom elements to the bottom */
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #398273;
+  word-wrap: break-word;
+}
+
+.card-description {
+  font-size: 0.8rem;
+  color: #398273;
+  margin-bottom: 20px; /* Provides space between description and footer info */
+  line-height: 1.5;
+  word-wrap: break-word;
+  flex-grow: 1; /* Allow description to take up available space */
+}
+
+/* New container for name and meta to stick them to the bottom */
+/* This is crucial for the desired left/right alignment at the bottom */
+.card-footer-info {
+  display: flex;
+  justify-content: space-between; /* This will push the first item to the left, second to the right */
+  align-items: flex-end; /* Vertically aligns items to the bottom if they have different heights */
+  width: 100%; /* Ensure it takes full width of card-content */
+  padding-top: 10px; /* Add some space above the footer info */
+}
+
+.card-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #398273;
+    font-style: normal;
+    word-wrap: break-word;
+    /* Ensure no conflicting positioning */
+    position: static;
+    left: unset;
+    bottom: unset;
+    margin: 0; /* Remove any default margins that might interfere */
+    padding: 0; /* Remove any default padding that might interfere */
+}
+
+.card-meta {
+  font-size: 0.8rem;
+  color: #398273;
+  font-style: italic;
+  text-align: right; /* Ensure text is aligned to the right */
+  word-wrap: break-word;
+  /* Ensure no conflicting positioning */
+  position: static;
+  right: unset;
+  bottom: unset;
+  margin: 0; /* Remove any default margins that might interfere */
+  padding: 0; /* Remove any default padding that might interfere */
+}
+
+
+/* Audio and text card styling consistent padding */
+.card-audio {
+  background-color: #398273;
+  padding: 22px 25px;
+  border-bottom: 1px solid #398273;
+  font-family: 'Ancizar Serif', serif;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.card-text {
+  padding: 22px 25px;
+  white-space: pre-line;
+  font-size: 0.8rem;
+  color: #398273;
+  line-height: 1.5;
+  font-family: 'Ancizar Serif', serif;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+/* Audio player full width */
+audio {
+  width: 100%;
+  margin-top: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Default larger padding for non-mobile */
+  box-sizing: border-box;
+}
+
+/* Modal Content Box - Modified to look like the original card */
+.modal-content {
+  background: white;
+  border-radius: 18px;
+  max-width: 380px; /* Target full card width for desktop */
+  width: 90%; /* Ensure it's responsive on smaller screens */
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  position: relative;
+  display: block;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles for the cloned card inside the modal */
+.modal-content .heritage-card.modal-card-display {
+    transform: none !important;
+    box-shadow: none !important;
+    margin: 0;
+    border-radius: 18px; /* Ensure modal card has full border radius */
+    overflow: hidden; /* Crucial for modal content to respect its own border-radius */
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 100%; /* Ensure the cloned card takes full width of modal-content */
+    display: flex; /* Make modal's cloned card a flex container */
+    flex-direction: column; /* Stack children vertically */
+}
+
+.modal-content .heritage-card.modal-card-display .card-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #398273;
+    box-sizing: border-box;
+    border-top-left-radius: 18px; /* Ensure top radius for modal image */
+    border-top-right-radius: 18px; /* Ensure top radius for modal image */
+}
+
+.modal-content .heritage-card.modal-card-display .card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-content .heritage-card.modal-card-display .card-content {
+    padding: 20px 25px;
+    box-sizing: border-box;
+    display: flex; /* Make modal's cloned card-content a flex container */
+    flex-direction: column; /* Stack children vertically */
+    flex-grow: 1; /* Allow to take up space */
+    justify-content: space-between; /* Push bottom elements to the bottom */
+}
+
+.modal-content .heritage-card.modal-card-display .card-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+}
+
+.modal-content .heritage-card.modal-card-display .card-description {
+    font-size: 0.8rem;
+    margin-bottom: 20px; /* Reduced margin here too */
+    word-wrap: break-word;
+    flex-grow: 1; /* Allow description to take up space */
+}
+
+/* Modal's cloned card also needs the footer info container */
+.modal-content .heritage-card.modal-card-display .card-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.modal-content .heritage-card.modal-card-display .card-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #398273;
+    font-style: normal;
+    word-wrap: break-word;
+    position: static;
+    bottom: unset;
+    left: unset;
+    margin: 0; /* Remove any default margins that might interfere */
+    padding: 0; /* Remove any default padding that might interfere */
+}
+
+.modal-content .heritage-card.modal-card-display .card-meta {
+    font-size: 0.8rem;
+    color: #398273;
+    font-style: italic;
+    text-align: right;
+    word-wrap: break-word;
+    position: static;
+    bottom: unset;
+    right: unset;
+    margin: 0; /* Remove any default margins that might interfere */
+    padding: 0; /* Remove any default padding that might interfere */
+}
+
+.modal-content .heritage-card.modal-card-display .card-audio,
+.modal-content .heritage-card.modal-card-display .card-text {
+    padding: 22px 25px;
+    box-sizing: border-box;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #555;
+}
+
+/* --- Responsive adjustments for larger tablet/desktop screens (min-width: 992px for 4 columns) --- */
+@media (min-width: 992px) {
+    .heritage-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on larger screens */
+        gap: 28px;
+    }
+}
+
+/* --- Responsive adjustments for smaller screens (max-width: 768px and below) --- */
+@media (max-width: 768px) {
+  body {
+      padding: 20px 15px;
+      overflow-x: hidden;
+  }
+
+  .header {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 0 15px;
+  }
+
+  .header h1 {
+      font-size: 2.2rem;
+      text-align: center;
+  }
+
+  .header-explanation {
+      font-size: 0.8rem;
+      text-align: center;
+      padding-bottom: 5px;
+  }
+
+  .back-button {
+      padding: 10px 20px;
+      font-size: 14px;
+      margin-top: 10px;
+  }
+
+  .main-content {
+      padding: 0 15px;
+      gap: 25px;
+      width: auto;
+  }
+
+  /* Responsive adjustments for the new button (icon-only) */
+  .add-heritage-button {
+    width: 60px;
+    height: 60px;
+  }
+  .add-heritage-button::before {
+    height: 30px;
+  }
+  .add-heritage-button::after {
+    width: 30px;
+  }
+
+  .qr-section p {
+      font-size: 0.8rem;
+  }
+
+  .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 0 10px;
+  }
+
+  .filter-bar button {
+      padding: 10px 20px;
+      margin: 0;
+      font-size: 14px;
+      flex-basis: auto;
+  }
+
+  .tag-explanation {
+      margin-top: 10px;
+      font-size: 0.8rem;
+  }
+
+  .heritage-grid {
+      grid-template-columns: 1fr; /* Single column layout for mobile */
+      gap: 20px;
+      padding: 0 10px;
+      width: auto;
+  }
+
+  .heritage-card {
+      border-radius: 12px; /* Consistent border-radius for phone mode */
+  }
+
+  /* Ensure card image respects the top border-radius in phone mode */
+  .card-image {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+  }
+
+  .card-content {
+      padding: 15px 20px;
+  }
+
+  .card-title {
+      font-size: 18px;
+  }
+
+  .card-description {
+      font-size: 0.8rem;
+      margin-bottom: 15px; /* Adjust margin for smaller screens */
+  }
+
+  /* card-footer-info now handles positioning */
+  .card-footer-info {
+    padding-top: 8px; /* Slightly less padding in mobile */
+  }
+
+  .card-name {
+      font-size: 0.85rem;
+  }
+
+  .card-meta {
+      font-size: 0.8rem;
+  }
+
+  .card-audio, .card-text {
+      padding: 18px 20px;
+  }
+
+  /* Modal adjustments for smaller screens */
+  .modal-overlay {
+      padding: 15px;
+  }
+
+  .modal-content {
+      max-width: 95%;
+      width: auto;
+      max-height: 80%;
+      padding: 0;
+      border-radius: 10px;
+  }
+  .modal-content .heritage-card.modal-card-display {
+      border-radius: 10px;
+  }
+  .modal-content .heritage-card.modal-card-display .card-image {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+  }
+  .modal-content .heritage-card.modal-card-display .card-description {
+      margin-bottom: 15px; /* Adjust margin for modal description */
+  }
+  .modal-content .heritage-card.modal-card-display .card-footer-info {
+    padding-top: 8px;
+  }
+
+
+  .modal-close {
+      font-size: 24px;
+      top: 10px;
+      right: 15px;
+  }
+}
+
+/* Specific adjustments for very narrow screens (e.g., 375px width and below) */
+@media (max-width: 400px) { /* This includes 375px width */
+  body {
+      padding: 15px 10px;
+  }
+
+  .header {
+      padding: 0 10px;
+      gap: 10px;
+  }
+
+  .header h1 {
+      font-size: 1.8rem;
+  }
+
+  .header-explanation {
+      font-size: 0.75rem;
+  }
+
+  .back-button {
+      padding: 8px 15px;
+      font-size: 13px;
+  }
+
+  .main-content {
+      padding: 0 10px;
+      gap: 20px;
+  }
+
+  /* Responsive adjustments for the new button (icon-only) */
+  .add-heritage-button {
+    width: 50px;
+    height: 50px;
+  }
+  .add-heritage-button::before {
+    height: 25px;
+  }
+  .add-heritage-button::after {
+    width: 25px;
+  }
+
+  .qr-section p {
+      font-size: 0.75rem;
+  }
+
+  .filter-bar {
+      padding: 0 5px;
+      gap: 5px;
+  }
+
+  .filter-bar button {
+      font-size: 12px;
+      padding: 8px 12px;
+  }
+
+  .tag-explanation {
+      font-size: 0.7rem;
+  }
+
+  .heritage-grid {
+      padding: 0 5px;
+      gap: 15px;
+  }
+
+  .heritage-card {
+      border-radius: 10px;
+  }
+  .card-image {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+  }
+
+
+  .card-content {
+      padding: 12px 15px;
+  }
+
+  .card-title {
+      font-size: 16px;
+  }
+
+  .card-name {
+      font-size: 0.75rem;
+  }
+
+  .card-description {
+      font-size: 0.75rem;
+      margin-bottom: 10px; /* Reduced margin further for very small screens */
+  }
+
+  /* card-footer-info now handles positioning */
+  .card-footer-info {
+    padding-top: 6px; /* Reduced padding */
+  }
+
+  .card-meta {
+      font-size: 0.7rem;
+  }
+
+  .card-audio, .card-text {
+      padding: 15px 18px;
+  }
+
+  .modal-overlay {
+      padding: 10px;
+  }
+
+  .modal-content {
+      max-width: 95%;
+      max-height: 85%;
+      border-radius: 8px;
+  }
+  .modal-content .heritage-card.modal-card-display {
+      border-radius: 8px;
+  }
+  .modal-content .heritage-card.modal-card-display .card-image {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+  }
+  .modal-content .heritage-card.modal-card-display .card-description {
+      margin-bottom: 10px; /* Adjust margin for modal description */
+  }
+  .modal-content .heritage-card.modal-card-display .card-footer-info {
+    padding-top: 6px;
+  }
+
+
+  .modal-close {
+      font-size: 22px;
+      top: 8px;
+      right: 12px;
+  }
+}
+
+/* Even narrower screens (e.g., 320px width - iPhone 5/SE gen 1) */
+@media (max-width: 320px) {
+    body {
+        padding: 10px 5px;
+    }
+
+    .header {
+        padding: 0 5px;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .back-button {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding: 0 5px;
+    }
+
+    /* Responsive adjustments for the new button (icon-only) */
+    .add-heritage-button {
+        width: 45px;
+        height: 45px;
+    }
+    .add-heritage-button::before {
+        height: 22px;
+    }
+    .add-heritage-button::after {
+        width: 22px;
+    }
+
+    .filter-bar button {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .tag-explanation {
+        font-size: 0.65rem;
+    }
+
+    .heritage-grid {
+        padding: 0 5px;
+        gap: 10px;
+    }
+
+    .heritage-card {
+        border-radius: 8px;
+    }
+    .card-image {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .card-content {
+        padding: 10px 12px;
+    }
+
+    .card-title {
+        font-size: 15px;
+    }
+
+    .card-name {
+        font-size: 0.7rem;
+    }
+
+    .card-description {
+        font-size: 0.7rem;
+        margin-bottom: 8px; /* Smallest margin for tiny screens */
+    }
+
+    .card-footer-info {
+        padding-top: 5px; /* Smallest padding */
+    }
+
+    .card-meta {
+        font-size: 0.65rem;
+    }
+
+    .card-audio, .card-text {
+        padding: 12px 15px;
+    }
+
+    .modal-overlay {
+        padding: 5px;
+    }
+
+    .modal-content {
+        border-radius: 6px;
+    }
+    .modal-content .heritage-card.modal-card-display {
+        border-radius: 6px;
+    }
+    .modal-content .heritage-card.modal-card-display .card-image {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+
+    .modal-close {
+        font-size: 20px;
+        top: 5px;
+        right: 10px;
+    }
+}
